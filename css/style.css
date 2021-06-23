@@ -1,4 +1,4 @@
-.header, .header__header-logo, .header__header-cart-button, .selection, .selection__filters-list, .main__pizza-list, .main__pizza-list-item-selection-pastry, .main__pizza-list-item-cost, .cart-content__header, .cart-content__header-title, .cart-content__cart-list-item, .cart-content__cart-list-item-info, .cart-content__cart-list-item-count {
+.header, .header__header-logo, .header__header-cart-button, .selection, .selection__filters-list, .main__pizza-list, .main__pizza-list-item-selection-pastry, .main__pizza-list-item-cost, .cart-content__header, .cart-content__header-title, .cart-content__cart-list-item, .cart-content__cart-list-item-info, .cart-content__cart-list-item-count, .cart-content__footer-detail, .cart-content__footer-buttons {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -18,6 +18,15 @@
 }
 .cart-content__cart-list-item-count-minus:hover::before, .cart-content__cart-list-item-count-plus:hover::before, .cart-content__cart-list-item-count-minus:hover::after, .cart-content__cart-list-item-count-plus:hover::after {
   background-color: #fff;
+}
+
+.cart-content__footer-buttons-goback, .cart-content__footer-buttons-pay {
+  width: 210px;
+  border-radius: 30px;
+  text-align: center;
+  padding: 20px 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 /* General */
@@ -302,4 +311,40 @@ body {
   background-color: #fe5f1e;
   border-color: #fe5f1e;
   cursor: pointer;
+}
+.cart-content__footer {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+}
+.cart-content__footer-detail {
+  font-size: 22px;
+}
+.cart-content__footer-detail-count-text {
+  margin-right: 5px;
+}
+.cart-content__footer-detail-count-number {
+  font-weight: 700;
+}
+.cart-content__footer-detail-sum-cost {
+  color: #fe5f1e;
+  font-weight: 700;
+}
+.cart-content__footer-buttons {
+  margin-top: 50px;
+}
+.cart-content__footer-buttons-goback {
+  color: #cacaca;
+  border: 1px solid #d3d3d3;
+}
+.cart-content__footer-buttons-goback:hover {
+  background-color: #fe5f1e;
+}
+.cart-content__footer-buttons-pay {
+  border: 1px solid #fe5f1e;
+  background-color: #fe5f1e;
+  color: #fff;
+}
+.cart-content__footer-buttons-pay:hover {
+  opacity: 0.8;
 }

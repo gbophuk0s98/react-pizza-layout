@@ -44,6 +44,15 @@ $defaultIndent: 25px;
     }
 }
 
+%LARGE_BUTTONS {
+    width: 210px;
+    border-radius: 30px;
+    text-align: center;
+    padding: 20px 0;
+    cursor: pointer;
+    transition: $defaultTransition;
+}
+
 
 /* General */
 
@@ -401,7 +410,7 @@ body {
                 &-icon {
                     transition: $defaultTransition;
                 }
-                
+
                 &:hover &-icon {
                     fill: $whiteColor;
                 }
@@ -409,6 +418,59 @@ body {
                     background-color: $headerBtnColor;
                     border-color: $headerBtnColor;
                     cursor: pointer;
+                }
+            }
+        }
+    }
+
+    &__footer {
+        margin-top: $defaultIndent * 2;
+        display: flex;
+        flex-direction: column;
+
+        &-detail {
+            @extend %FLEX_SB_CENTER;
+            font-size: 22px;
+            &-count {
+                &-text {
+                    margin-right: 5px;
+                }
+
+                &-number {
+                    font-weight: 700;
+                }
+            }
+            &-sum {
+                &-cost {
+                    color: $headerBtnColor;
+                    font-weight: 700;
+                }
+            }
+        }
+
+        &-buttons {
+            margin-top: $defaultIndent * 2;
+            @extend %FLEX_SB_CENTER;
+
+            &-goback {
+
+                @extend %LARGE_BUTTONS;
+                color: #cacaca;
+                border: 1px solid #d3d3d3;
+
+                &:hover {
+                    background-color: $headerBtnColor;
+                }
+            }
+
+            &-pay {
+                @extend %LARGE_BUTTONS;
+                border: 1px solid $headerBtnColor;
+                background-color: $headerBtnColor;
+                color: $whiteColor;
+
+                &:hover {
+                    opacity: 0.8;
                 }
             }
         }
