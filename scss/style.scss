@@ -1,0 +1,246 @@
+$fullHeight: 85vh;
+$bgColor: #e5e5e5;
+$containerBgColor: #fff;
+$blackColor: #000;
+$whiteColor: #fff;
+$containerWidth: 1340px;
+$containerHeight: 1409px;
+
+$projectFont: 'Montserrat', sans-serif;
+$darkColor: #181818;
+$filterBackroundColor: #f5f5f5;
+$selectionPizzaColor: #f3f3f3;
+
+$headerBtnColor: #fe5f1e;
+$addBtnColor: #eb5a1e;
+
+$defaultTransition: all .3s ease;
+
+$defaultIndent: 25px;
+
+%FLEX_SB_CENTER { 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+/* General */
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+body {
+    height: $fullHeight;
+    background: $bgColor;
+    font-family: $projectFont;
+}
+
+.container {
+
+    height: $containerHeight;
+    max-width: $containerWidth;
+    background-color: $containerBgColor;
+
+    border-radius: 10px;
+    margin: $defaultIndent auto;
+
+    box-shadow: 0px 15px 20px rgba($blackColor, 0.03);
+
+    & .content {
+        padding: 40px 50px;
+    }
+}
+
+/* Header */
+
+.header {
+
+    @extend %FLEX_SB_CENTER;
+
+    border-bottom: 1px solid #f7f7f7;
+    padding-bottom: $defaultIndent;
+
+    &__header-logo {
+        @extend %FLEX_SB_CENTER;
+        
+        &-description {
+            display: flex;
+            flex-direction: column;
+            margin-left: 10px;
+
+            &-title {
+                color: $darkColor;
+                font-size: 24px;
+                font-weight: bold;
+                text-transform: uppercase;
+            }
+
+            &-text {
+                color: #7b7b7b;
+                font-size: 16px;
+            }
+        }
+    }
+
+    &__header-cart {
+        background-color: $headerBtnColor;
+        width: 150px;
+        height: 50px;
+        border-radius: 30px;
+        color: $whiteColor;
+        cursor: pointer;
+        transition: $defaultTransition;
+        
+        &:hover {
+            background-color: #fe951e;
+        }
+
+        &-button {
+            @extend %FLEX_SB_CENTER;
+            justify-content: space-around;
+            height: 100%;
+
+            &-cost, &-cart {
+                width: 45%;
+                text-align: center;
+            }
+
+            &-cart {
+                border-left: 1px solid #e5e5e5;
+            }
+        }
+    }
+}
+
+
+/* selection */
+
+.selection {
+    margin-top: $defaultIndent;
+    @extend %FLEX_SB_CENTER;
+    
+    &__filters {
+
+        max-width: 65%;
+        width: 100%;
+
+        &-list {
+            @extend %FLEX_SB_CENTER;
+
+            &-item {
+                cursor: pointer;
+                color: $darkColor;
+                background-color: $filterBackroundColor;
+                padding: 10px 20px;
+                border-radius: 30px;
+                font-weight: bold;
+                transition: $defaultTransition;
+
+                &:hover {
+                    background-color: #181818;
+                    color: $whiteColor;
+                }
+            }
+        }
+    }
+
+    &__sorting {
+        &-selected {
+            cursor: pointer;
+            color: $headerBtnColor;
+            border-bottom: 1px dotted $headerBtnColor;
+        }
+    }
+}
+
+/* main */
+.main {
+    margin-top: $defaultIndent + 10;
+    display: flex;
+    flex-direction: column;
+    
+    &__title {
+        font-weight: 700;
+        font-size: 32px;
+    }
+    &__pizza-list {
+        margin-top: $defaultIndent;
+        @extend %FLEX_SB_CENTER;
+        flex-wrap: wrap;
+        &-item {
+            margin-top: $defaultIndent;
+            max-width: 24%;
+
+            &-img {
+                padding: 0px 6px 0 15px;
+            }
+
+            &-title {
+                font-size: 20px;
+                font-weight: bold;
+                text-align: center;
+            }
+            &-selection {
+
+                height: max-content;
+                padding: 5px;
+                margin-top: $defaultIndent - 5;
+                background: $selectionPizzaColor;
+                border-radius: 10px;
+
+                &-pastry {
+                    background: $selectionPizzaColor;
+                    @extend %FLEX_SB_CENTER;
+
+                    &-button {
+                        border: 0;
+                        width: 48%;
+                        font-size: 14px;
+                        color: $darkColor;
+                        font-weight: 700;
+                        cursor: pointer;
+                        padding: 10px 20px;
+                        text-align: center;
+                        transition:  $defaultTransition;
+
+                        &:hover {
+                            background-color: #fff;
+                            border-radius: 5px;
+                            box-shadow: 0px 2px 4px rgba($blackColor, 0.04);
+                        }
+                    }
+                }
+            }
+
+            &-cost {
+                @extend %FLEX_SB_CENTER;
+                margin-top: $defaultIndent;
+                &-text {
+                    font-weight: 700;
+                    font-size: 22px;
+                }
+                &-button {
+                    color: $addBtnColor;
+                    font-weight: 700;
+                    border-radius: 30px;
+                    border: 1px solid $addBtnColor;
+                    max-width: 40%;
+                    width: 100%;
+                    text-align: center;
+                    padding: 10px;
+                    cursor: pointer;
+                    transition: $defaultTransition;
+
+                    &:hover {
+                        color: $whiteColor;
+                        background: $addBtnColor;
+                    }
+                }
+            }
+        }
+    }
+}
