@@ -25,6 +25,25 @@ $defaultIndent: 25px;
     align-items: center;
 }
 
+%SIMPLE_HORIZONTAL_LINE {
+    &::before {
+        content: '';
+        position: absolute;
+        display: block;
+        background-color: $headerBtnColor;
+        height: 2px;
+        width: 17px;
+        margin-top: 5px;
+        top: 35%;
+        left: 10px;
+        transition: $defaultTransition;
+    }
+
+    &:hover::before, &:hover::after {
+        background-color: $whiteColor;
+    }
+}
+
 
 /* General */
 
@@ -320,25 +339,76 @@ body {
             &-count {
                 @extend %FLEX_SB_CENTER;
 
-                &-minus {
+                &-minus, &-plus {
                     width: 16px;
                     height: 16px;
                     padding: 10px;
                     border-radius: 50%;
                     border: 1px solid $headerBtnColor;
                     text-align: center;
-                    position: relative;
+                    cursor: pointer;
+                    transition: $defaultTransition;
 
-                    &-line {
-                        position: absolute;
-                        top: 16px;
-                        left: 11px;
-                        width: 13px;
-                        height: 2px;
-                        border-radius: 1px;
-                        display: block;
+                    position: relative;
+                    transition: $defaultTransition;
+
+                    @extend %SIMPLE_HORIZONTAL_LINE;
+
+                    &:hover {
                         background-color: $headerBtnColor;
                     }
+                    &:hover &-line {
+                        background-color: $whiteColor;
+                    }
+                }
+
+                &-text {
+                    font-weight: 700;
+                    color: $darkColor;
+                    font-size: 22px;
+                    margin: 0 10px;
+                }
+
+                &-plus {
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        display: block;
+                        background-color: $headerBtnColor;
+                        height: 15px;
+                        width: 2px;
+                        margin-top: 5px;
+                        top: 20%;
+                        left: 17px;
+                        transition: $defaultTransition;   
+                    }
+                }
+            }
+
+            &-cost {
+                font-size: 22px;
+                font-weight: 700;
+                color: $darkColor;
+            }
+
+            &-delete {
+                width: 16px;
+                height: 16px;
+                border-radius: 50%;
+                border: 2px solid #d7d7d7;
+                transition: $defaultTransition;
+
+                &-icon {
+                    transition: $defaultTransition;
+                }
+                
+                &:hover &-icon {
+                    fill: $whiteColor;
+                }
+                &:hover {
+                    background-color: $headerBtnColor;
+                    border-color: $headerBtnColor;
+                    cursor: pointer;
                 }
             }
         }
