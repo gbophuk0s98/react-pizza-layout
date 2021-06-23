@@ -1,4 +1,4 @@
-.header, .header__header-logo, .header__header-cart-button, .selection, .selection__filters-list, .main__pizza-list, .main__pizza-list-item-selection-pastry, .main__pizza-list-item-cost {
+.header, .header__header-logo, .header__header-cart-button, .selection, .selection__filters-list, .main__pizza-list, .main__pizza-list-item-selection-pastry, .main__pizza-list-item-cost, .cart-content__header, .cart-content__header-title, .cart-content__cart-list-item, .cart-content__cart-list-item-info, .cart-content__cart-list-item-count {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -12,7 +12,7 @@
 }
 
 body {
-  height: 85vh;
+  height: max-content;
   background: #e5e5e5;
   font-family: "Montserrat", sans-serif;
 }
@@ -62,6 +62,8 @@ body {
   background-color: #fe951e;
 }
 .header__header-cart-button {
+  color: #fff;
+  text-decoration: none;
   justify-content: space-around;
   height: 100%;
 }
@@ -174,4 +176,74 @@ body {
 .main__pizza-list-item-cost-button:hover {
   color: #fff;
   background: #eb5a1e;
+}
+
+/* cart-page */
+.cart-content {
+  max-width: 60%;
+  margin: 25px auto;
+}
+.cart-content__header-title {
+  justify-content: flex-start;
+}
+.cart-content__header-title-text {
+  margin-left: 15px;
+  font-size: 26px;
+  font-weight: 700;
+}
+.cart-content__header-button {
+  display: flex;
+  justify-content: flex-end;
+  cursor: pointer;
+  border: 1px solid #fff;
+}
+.cart-content__header-button-text {
+  font-size: 16px;
+  color: #b6b6b6;
+}
+.cart-content__header-button:hover {
+  border-bottom: 1px solid #b6b6b6;
+}
+.cart-content__cart-list {
+  margin-top: 45px;
+  display: flex;
+  flex-direction: column;
+}
+.cart-content__cart-list-item {
+  border-top: 1px solid #f4f4f4;
+  padding-top: 25px;
+}
+.cart-content__cart-list-item-info-detail {
+  margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.cart-content__cart-list-item-info-detail-title {
+  font-weight: 700;
+  color: #181818;
+  font-size: 22px;
+}
+.cart-content__cart-list-item-info-detail-description {
+  font-size: 18px;
+  color: #8d8d8d;
+  padding: 3px 0 0;
+}
+.cart-content__cart-list-item-count-minus {
+  width: 16px;
+  height: 16px;
+  padding: 10px;
+  border-radius: 50%;
+  border: 1px solid #fe5f1e;
+  text-align: center;
+  position: relative;
+}
+.cart-content__cart-list-item-count-minus-line {
+  position: absolute;
+  top: 16px;
+  left: 11px;
+  width: 13px;
+  height: 2px;
+  border-radius: 1px;
+  display: block;
+  background-color: #fe5f1e;
 }

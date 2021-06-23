@@ -1,4 +1,4 @@
-$fullHeight: 85vh;
+$fullHeight: max-content;
 $bgColor: #e5e5e5;
 $containerBgColor: #fff;
 $blackColor: #000;
@@ -13,6 +13,7 @@ $selectionPizzaColor: #f3f3f3;
 
 $headerBtnColor: #fe5f1e;
 $addBtnColor: #eb5a1e;
+$deleteBtnColor: #b6b6b6;
 
 $defaultTransition: all .3s ease;
 
@@ -100,6 +101,8 @@ body {
         }
 
         &-button {
+            color: $whiteColor;
+            text-decoration: none;
             @extend %FLEX_SB_CENTER;
             justify-content: space-around;
             height: 100%;
@@ -238,6 +241,103 @@ body {
                     &:hover {
                         color: $whiteColor;
                         background: $addBtnColor;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* cart-page */
+
+.cart-content {
+    max-width: 60%;
+    margin: $defaultIndent auto;
+
+    &__header {
+        @extend %FLEX_SB_CENTER;
+        &-title {
+            @extend %FLEX_SB_CENTER;
+            justify-content: flex-start;
+
+            &-text {
+                margin-left: 15px;
+                font-size: 26px;
+                font-weight: 700;
+            }
+        }
+
+        &-button {
+            display: flex;
+            justify-content: flex-end;
+            cursor: pointer;
+            border: 1px solid $whiteColor;
+
+            &-text {
+                font-size: 16px;
+                color: $deleteBtnColor;
+            }
+
+            &:hover {
+                border-bottom: 1px solid $deleteBtnColor;
+            }
+        }
+
+    }
+
+    &__cart-list {
+        margin-top: $defaultIndent + $defaultIndent - 5;
+        display: flex;
+        flex-direction: column;
+
+        &-item {
+            @extend %FLEX_SB_CENTER;
+            border-top: 1px solid #f4f4f4;
+            padding-top: $defaultIndent;
+
+            &-info {
+                @extend %FLEX_SB_CENTER;
+
+                &-detail {
+                    margin-left: 10px;
+                    display: flex;
+                    flex-direction: column;
+
+                    &-title {
+                        font-weight: 700;
+                        color: $darkColor;
+                        font-size: 22px;
+                    }
+
+                    &-description {
+                        font-size: 18px;
+                        color: #8d8d8d;
+                        padding: 3px 0 0;
+                    }
+                }
+            }
+
+            &-count {
+                @extend %FLEX_SB_CENTER;
+
+                &-minus {
+                    width: 16px;
+                    height: 16px;
+                    padding: 10px;
+                    border-radius: 50%;
+                    border: 1px solid $headerBtnColor;
+                    text-align: center;
+                    position: relative;
+
+                    &-line {
+                        position: absolute;
+                        top: 16px;
+                        left: 11px;
+                        width: 13px;
+                        height: 2px;
+                        border-radius: 1px;
+                        display: block;
+                        background-color: $headerBtnColor;
                     }
                 }
             }
